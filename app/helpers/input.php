@@ -25,6 +25,16 @@ class Input
         }
     }
 
+    private function sanitize($in)
+    {
+        return $in;
+    }
+
+    public function post($key = false)
+    {
+        return $this->get_data('post', $key);
+    }
+
     private function get_data($type, $key = false)
     {
 
@@ -36,20 +46,8 @@ class Input
 
     }
 
-    private function sanitize($in)
-    {
-        return $in;
-    }
-
-    public function post($key = false)
-    {
-        return $this->get_data('post', $key);
-    }
-
     public function get($key = false)
     {
         return $this->get_data('get', $key);
     }
 }
-
-?>

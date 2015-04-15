@@ -4,8 +4,8 @@
 
 $config = array(
     //'relative_url' => RELATIVE_URL,
-    'base_url' => '',
-    'code_url' => '',
+    'base_url' => '/',
+    'code_url' => '/',
 
     'default_controller' => 'main',
     'error_controller' => 'error',
@@ -86,5 +86,3 @@ $config = array(
         )
     )
 );
-
-?>
