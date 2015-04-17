@@ -168,15 +168,15 @@ body {
     padding: 0;
 
     font: 14px/1.5em "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: #272B2F;
+    color: #fff;
     cursor: default;
 
-    background: #E7EEF2;
+    background: #202020;
     -webkit-font-smoothing: antialiased;
 }
 
 a, a:visited {
-    color: #3D494E;
+    color: #fff;
     text-decoration: none;
 }
 
@@ -184,7 +184,8 @@ a, a:visited {
 .modal form input,
 .modal form textarea,
 .modal form select {
-    font-family: "Monaco", "Inconsolata", "Andale Mono", "Lucida Console", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
+   /* font-family: "Monaco", "Inconsolata", "Andale Mono", "Lucida Console", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;*/
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 /*
@@ -198,8 +199,8 @@ a, a:visited {
 
     height: 30px;
 
-    color: #3D494E;
-    background: #fefefe;
+    color: /*#3D494E*/ #fff;
+    background: /*#fefefe*/ #202020;
     outline: 2px solid rgba(0, 0, 0, 0.1);
     z-index: 3;
 }
@@ -207,7 +208,7 @@ a, a:visited {
 #top-bar header {
     line-height: 30px;
     text-align: center;
-    color: #777;
+    color:/* #777*/ #fff;
 }
 
 #top-bar header div, #top-bar header p {
@@ -297,9 +298,10 @@ a, a:visited {
 /*
  * Second Level Dropdowns
  */
+/*#4d4d4d, #2f2f2f*/
 #top-bar nav > ul > li > ul {
     position: absolute;
-    background: white;
+    background: #4d4d4d;
     margin: 0;
     padding: 0;
     list-style-type: none;
@@ -308,7 +310,7 @@ a, a:visited {
     -moz-box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
     box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
 
-    border: 1px solid #CCC;
+    border: 1px solid #4d4d4d;
     border-top: none;
     left: -1px;
     display: none;
@@ -331,12 +333,12 @@ a, a:visited {
 }
 
 #top-bar .seperator {
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #2f2f2f;
 }
 
 #top-bar .brand a {
     font-family: "Monaco", "Inconsolata", "Andale Mono", "Lucida Console", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
-    border-right: 1px solid #ddd;
+    border-right: 1px solid #000;
     padding: 0 20px;
 }
 
@@ -345,8 +347,9 @@ a, a:visited {
 }
 
 #top-bar li:hover {
-    background: #eee;
-    border-color: #eee;
+    /*background: #eee;
+    border-color: #eee;*/
+    background: linear-gradient(#4d4d4d, #2f2f2f);
 }
 
 /*
@@ -456,7 +459,7 @@ a, a:visited {
 .result-wrap {
     display: none;
     height: 50%;
-    background: #fefefe;
+    background: #202020;
 }
 
 .result-wrap .iframe-wrap {
@@ -516,30 +519,31 @@ a, a:visited {
 }
 
 .vert-resizer {
-    background: -webkit-linear-gradient(#EEE, #DFDFDF);
-    border-top: 1px solid #CCC;
-    box-shadow: inset 0 1px 0 white;
+    background: -webkit-linear-gradient(top, #505050, #383838);
+    background: linear-gradient(to top, #505050, #383838);
+
     position: absolute;
     z-index: 250;
     left: 0;
     top: 0px;
     width: 100%;
-    height: 5px;
-    border-bottom: 1px solid #CCC;
+    height: 6px;
+
 }
 
 .horiz-resizer {
 
-    background: -webkit-gradient(linear, left top, right top, from(#EEE), to(#DFDFDF));
+    background: -webkit-gradient(linear, left top, right top, from(#505050), to(#383838));
+    background: -webkit-linear-gradient(left, #505050, #383838);
+    background: linear-gradient(to right, #505050, #383838);
 
-    box-shadow: inset 1px 0 0 white;
+
     position: absolute;
     z-index: 250;
     left: 0;
     top: 0;
     height: 100%;
-    width: 5px;
-    border-right: 1px solid #CCC;
+    width: 6px;
 }
 
 /*
@@ -809,14 +813,20 @@ a, a:visited {
 }
 
 .btn-positive {
-    border-color: #7AC548;
-    color: #7AC548;
+    border-color: #00e9a4;
+    color: #202020;
+    background-color: #00e9a4;
+    border-radius: 5px;
 }
 
 .btn.btn-positive:hover {
-    color: #fff;
-    background: #7AC548;
+    background: #00ffb4;
+    color: #202020;
 }
+.login-label {
+    padding-right: 10px;
+}
+
 
 /*
  * Helpers
@@ -880,15 +890,15 @@ a, a:visited {
 }
 
 #auth form > div {
-    padding: 40px 0 0 0;
+    padding: 40px 0 0 20px;
     display: inline-block;
 }
 
 #auth form .text {
-    padding: 5px;
-    outline: none;
-    border: 2px solid #999;
-    cursor: default;
+    width: 8em;
+    font-size: 1em;
+    color: #7a7678;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 #auth form .text:focus {
@@ -898,14 +908,18 @@ a, a:visited {
 #auth .login-btn {
     margin: 0 31px 0 0;
     width: 100px;
+    height: 36px;
     padding-top: 5px;
+    font-size: 16px;
 }
 
 #auth p {
     margin: 0;
-    text-align: center;
+    text-align: right;
     position: relative;
-    top: 20px;
+    color: #fd3535;
+    font-weight: bold;
+    padding-right: 45px;
 }
 
 /*
@@ -918,7 +932,9 @@ a, a:visited {
 
 
 /**social styles **/
-
+.main-content {
+    padding: 0 3%;
+}
 .one-codelet {
     width: 32%;
     height: 181px;

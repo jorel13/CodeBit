@@ -50,7 +50,7 @@ $config = array(
     ),
 
     'base_editor_settings' => array(
-        'theme' => 'bits',
+        'theme' => 'ambiance',
         'tabSize' => 4,
         'electricChars' => 'yes',
         'lineWrapping' => 'no',
