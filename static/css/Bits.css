@@ -856,14 +856,15 @@ a, a:visited {
  * Auth
  */
 #auth {
-    width: 400px;
     margin: 0 auto;
-    padding-top: 100px;
 }
 
 #auth header {
-    text-align: center;
+
+    padding: 1em;
     font-size: 36px;
+    display: inline-block;
+    width: 20%;
 }
 
 #auth header span {
@@ -872,11 +873,15 @@ a, a:visited {
 }
 
 #auth form {
-    text-align: center;
+    display: inline-block;
+    width: 72%;
+    min-width: 723px;
+    text-align: right;
 }
 
 #auth form > div {
     padding: 40px 0 0 0;
+    display: inline-block;
 }
 
 #auth form .text {
@@ -909,4 +914,34 @@ a, a:visited {
 .controller-code.action-share {
     overflow: hidden;
     background: #fff;
+}
+
+
+/**social styles **/
+
+.one-codelet {
+    width: 32%;
+    height: 181px;
+    float: left;
+    overflow: hidden;
+    margin: 0 2% 25px 0;
+    position: relative;
+}
+.iframe-wrap {
+    position: relative;
+    height: 150px;
+    overflow: hidden;
+}
+.codelet-info {
+    height: 12px;
+    width: 100%;
+}
+.user-name {
+
+}
+.codelet-stats {
+
+}
+.hearts-num {
+
 }
