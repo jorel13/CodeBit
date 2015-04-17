@@ -2,6 +2,7 @@
 
 class Ajax extends Controller
 {
+    private $data;
 
     function __construct()
     {
@@ -20,7 +21,7 @@ class Ajax extends Controller
 
     function saveBit()
     {
-        $data = $this->input->post();
+        $data = $this->post();
 
         $code = $this->loadModel('code_model');
 
@@ -150,4 +151,17 @@ class Ajax extends Controller
         echo $this->api_put(true, $out);
     }
 
+
+    public function post($key = false)
+    {
+        if (isset($_POST) && !empty($_POST)) {
+            $this->data = $_POST;
+        }
+
+        if (isset($_GET) && !empty($_GET) && !empty($_GET[0])) {
+            $this->data = $_GET;
+        }
+
+        return $this->data;
+    }
 }

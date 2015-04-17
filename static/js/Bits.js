@@ -9,17 +9,61 @@ $.fn.injectObject=function(data){var els=this.find(':input').get();if(arguments.
 
 window.btoa = function(str) {
 	return(Base64.encode(str));
-}
+};
+
+//Toggle 
+ $('.flat-toggle').on('click', function() {$(this).toggleClass('on');});
+
 
 /*
  *
  *
  */
 
-var count=0;
-function add_fields() {
-    count += 1;
-    document.getElementById('wrapper').innerHTML += '<input type="text" name="javascript_external" id="prefJSExternal">\r\n';
+function addCSSExternal()
+{
+    var firstExternalCSS = document.getElementById('prefCSSExternal').value;
+    var extraExternalCSSObjectArray = document.getElementsByClassName('prefCSSExternal');
+    var extraExternalCSSTextArray = [];
+
+    for (var i = 0; i < extraExternalCSSObjectArray.length; i++)
+    {
+        extraExternalCSSTextArray[i] = extraExternalCSSObjectArray[i].value;
+    }
+
+    document.getElementById('CSSExternalResourcesLabel').innerHTML += '<input type="text" name="css_external" class="prefCSSExternal">';
+    document.getElementById('prefCSSExternal').value = firstExternalCSS;
+
+    for (var i = 0; i < extraExternalCSSObjectArray.length; i++)
+    {
+        if(i < extraExternalCSSObjectArray.length-1)
+            extraExternalCSSObjectArray[i].value = extraExternalCSSTextArray[i];
+        else
+            extraExternalCSSObjectArray[i].value = "";
+    }
+}
+
+function add_fields()
+{
+    var firstExternalJS = document.getElementById('prefJSExternal').value;
+    var extraExternalJSObjectArray = document.getElementsByClassName('prefJSExternal');
+    var extraExternalJSTextArray = [];
+
+    for (var i = 0; i < extraExternalJSObjectArray.length; i++)
+    {
+        extraExternalJSTextArray[i] = extraExternalJSObjectArray[i].value;
+    }
+
+    document.getElementById('JSExternalResourcesLabel').innerHTML += '<input type="text" name="javascript_external" class="prefJSExternal">';
+    document.getElementById('prefJSExternal').value = firstExternalJS;
+
+    for (var i = 0; i < extraExternalJSObjectArray.length; i++)
+    {
+        if(i < extraExternalJSObjectArray.length-1)
+            extraExternalJSObjectArray[i].value = extraExternalJSTextArray[i];
+        else
+            extraExternalJSObjectArray[i].value = "";
+    }
 }
 
 var Bits = Bits || (function($, win, doc) {

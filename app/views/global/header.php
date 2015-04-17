@@ -30,9 +30,9 @@
 <div class="data-wrap">
     <div id="top-bar">
         <nav>
-            <ul>
+            <ul class = "nav-spacing">
                 <li class="brand">
-                    <a href="<?PHP echo home_url(); ?>"><span class="bit-embed"></span> Kinetify</a>
+                    <a href="<?PHP echo home_url(); ?>"><span class="bit-embed"></span> new codebit</a>
                 </li>
                 <li>
                     <a href="#">File</a>
@@ -86,8 +86,6 @@
                         <li><a href="#" data-event="code.shortcuts">Keyboard Shortcuts</a></li>
                     </ul>
                 </li>
-
-                <?PHP if (isset($bit)) { ?>
                     <li>
                         <a href="#">Share</a>
                         <ul>
@@ -97,8 +95,16 @@
                                    target="_blank">Result Only</a></li>
                         </ul>
                     </li>
-                <?PHP } ?>
-                <li><a href="<?= home_url('auth/logout'); ?>">Logout</a></li>
+                <li class = "toggle-container"> 
+                        <div class="flat-toggle"> 
+                            <span>Private</span> 
+                        </div> 
+                </li> 
+                <li>
+                    <a href="<?= home_url('auth/logout'); ?>">Logout</a>
+                </li> 
+
+
             </ul>
             <header>
                 <div><span class="bit-radio-unchecked"></span>
