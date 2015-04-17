@@ -16,6 +16,12 @@ window.btoa = function(str) {
  *
  */
 
+var count=0;
+function add_fields() {
+    count += 1;
+    document.getElementById('wrapper').innerHTML += '<input type="text" name="javascript_external" id="prefJSExternal">\r\n';
+}
+
 var Bits = Bits || (function($, win, doc) {
 
     var Utils   = {}, // Your Toolbox  

@@ -961,3 +961,14 @@ a, a:visited {
 .hearts-num {
 
 }
+
+#wrapper {
+    margin-bottom: 0px;
+}
+
+  #more_fields {
+    background: white;
+    border: none;
+    text-align: left;
+    text-decoration: underline;
+}

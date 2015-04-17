@@ -118,10 +118,10 @@
                         <?PHP echo select_list('js'); ?>
                     </select>
                 </label>
-                <label for="prefJSExternal">
-                    External JS
-                    <input type="text" name="javascript_external" id="prefJSExternal">
-                </label>
+                <label for="prefJSExternal" id="wrapper">     External JS 
+                    <input type="text" name="javascript_external" id="prefJSExternal"> 
+                </label> 
+                <input type="button" id="more_fields" onclick="add_fields();" value="+ add another resource" />
             </form>
         </section>
         <footer class="modal-inner group">
