@@ -33,6 +33,7 @@
 }
 
 .bit-embed:before {
+    color: #00e9a4;
     content: "\e00b";
 }
 
@@ -42,6 +43,7 @@
 
 .bit-radio-unchecked:before {
     content: "\e001";
+    color: #00e9a4;
 }
 
 .bit-radio-checked:before {
@@ -70,6 +72,7 @@
 
 .bit-checkmark:before {
     content: "\e008";
+    color: #00e9a4;
 }
 
 .bit-close:before {
@@ -597,9 +600,9 @@ a, a:visited {
 
 #blanket .modal {
     position: absolute;
-    background: #fff;
+    background: #202020;
     width: 400px;
-    border: 1px solid #ccc;
+    border: 1px solid #4d4d4d;
     -webkit-box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
     box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
@@ -620,7 +623,7 @@ a, a:visited {
 }
 
 #blanket .seperator {
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #4d4d4d;
 }
 
 .modal-editor, .modal-editor-wrap, .modal .CodeMirror {
@@ -871,7 +874,7 @@ a, a:visited {
 
 #auth header {
 
-    padding: 1em;
+    padding: 1em 1em 1em 1.5em;
     font-size: 36px;
     display: inline-block;
     width: 20%;
@@ -885,7 +888,7 @@ a, a:visited {
 #auth form {
     display: inline-block;
     width: 72%;
-    min-width: 723px;
+    max-width: 1288px;
     text-align: right;
 }
 
@@ -909,7 +912,7 @@ a, a:visited {
     margin: 0 31px 0 0;
     width: 100px;
     height: 36px;
-    padding-top: 5px;
+    padding-top: 3px;
     font-size: 16px;
 }
 
@@ -919,7 +922,7 @@ a, a:visited {
     position: relative;
     color: #fd3535;
     font-weight: bold;
-    padding-right: 45px;
+    padding-right: 157px;
 }
 
 /*
@@ -936,12 +939,12 @@ a, a:visited {
     padding: 0 3%;
 }
 .one-codelet {
-    width: 32%;
+    width: 384px;
     height: 181px;
-    float: left;
+    display: inline-block;
     overflow: hidden;
     margin: 0 2% 25px 0;
-    position: relative;
+
 }
 .iframe-wrap {
     position: relative;
@@ -949,26 +952,63 @@ a, a:visited {
     overflow: hidden;
 }
 .codelet-info {
-    height: 12px;
+    height: 30px;
     width: 100%;
+    display: inline-block;
+    background: #000;
+    padding-bottom: 6px;
+    border-radius: 5px 5px 0 0;
+    font-weight: bold;
+
+}
+.main-page-header {
+    font-size: 20px;
 }
 .user-name {
-
+    display: inline-block;
+    width: 41%;
+    padding: 7px 0 6px 14px;
+    color: #00e9a4;
 }
 .codelet-stats {
-
+    display: inline-block;
+    width: 48%;
+    text-align: right;
 }
 .hearts-num {
-
+    display: inline-block;
+}
+.heart {
+    width: 23px;
+    height: 17px;
+    display: inline-block;
+}
+.heart:before {
+    content: "\2764";
+    font-weight: bold;
+    color: #fd3535;
+    font-size: 17px;
+    vertical-align: bottom;
+}
+.more-codebits {
+    width: 20px;
+    height: 15px;
+    margin:  0 auto;
+}
+.codebits-container {
+    margin: 0 auto;
+    width: 98%;
+}
+.next-btn {
+    position: relative;
+    width: 116px;
+    margin: 0 31px 0 0;
+    height: 36px;
+    padding-top: 3px;
+    font-size: 16px;
 }
 
-#wrapper {
-    margin-bottom: 0px;
-}
-
-  #more_fields {
-    background: white;
-    border: none;
-    text-align: left;
-    text-decoration: underline;
-}
+/*.next-btn:before {
+    content: "\1433";
+    color: #202020;
+}*/
