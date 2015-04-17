@@ -33,6 +33,7 @@
 }
 
 .bit-embed:before {
+    color: #00e9a4;
     content: "\e00b";
 }
 
@@ -871,7 +872,7 @@ a, a:visited {
 
 #auth header {
 
-    padding: 1em;
+    padding: 1em 1em 1em 1.5em;
     font-size: 36px;
     display: inline-block;
     width: 20%;
@@ -885,7 +886,7 @@ a, a:visited {
 #auth form {
     display: inline-block;
     width: 72%;
-    min-width: 723px;
+    max-width: 1260px;
     text-align: right;
 }
 
@@ -936,7 +937,7 @@ a, a:visited {
     padding: 0 3%;
 }
 .one-codelet {
-    width: 32%;
+    width: 384px;
     height: 181px;
     float: left;
     overflow: hidden;
@@ -949,14 +950,25 @@ a, a:visited {
     overflow: hidden;
 }
 .codelet-info {
-    height: 12px;
+    height: 30px;
     width: 100%;
+    display: inline-block;
+    background: #000;
+    padding-bottom: 6px;
+    border-radius: 5px 5px 0 0;
+}
+.main-page-header {
+    font-size: 20px;
 }
 .user-name {
-
+    display: inline-block;
+    width: 41%;
+    padding: 7px 0 6px 14px;
 }
 .codelet-stats {
-
+    display: inline-block;
+    width: 48%;
+    text-align: right;
 }
 .hearts-num {
 
