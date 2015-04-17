@@ -3,7 +3,7 @@
 
 
 $config = array(
-    //'relative_url' => RELATIVE_URL,
+    'relative_url' => RELATIVE_URL,
     'base_url' => '/',
     'code_url' => '/',
 
@@ -13,7 +13,7 @@ $config = array(
     'db_host' => 'localhost',
     'db_name' => 'eaglebits',
     'db_username' => 'root',
-    'db_password' => '',
+    'db_password' => 'root',
 
     'users' => array(
         'demo' => 'demo'

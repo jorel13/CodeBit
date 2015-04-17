@@ -72,23 +72,25 @@ class Code extends Controller
         $this->template = $this->loadView($template);
         $code = $this->loadModel('code_model');
 
-        $bit = $code->getBitBySlug($slug, $version);
+        if(isset($code)) {
+            $bit = $code->getBitBySlug($slug, $version);
 
-        if ($bit) {
+            if ($bit) {
 
-            $bitSettings = !empty($bit->meta) ? json_decode($bit->meta) : array();
-            $bitSettings = $this->overloadBitSettings($bitSettings, $config['base_bit_settings']);
+                $bitSettings = !empty($bit->meta) ? json_decode($bit->meta) : array();
+                $bitSettings = $this->overloadBitSettings($bitSettings, $config['base_bit_settings']);
 
-            $editorSettings = $this->overloadBitSettings($this->session->get('editor_settings'), $config['base_editor_settings'], true);
+                $editorSettings = $this->overloadBitSettings($this->session->get('editor_settings'), $config['base_editor_settings'], true);
 
-            $this->template->set(array(
-                'bit' => $bit,
-                'settings' => $bitSettings,
-                'editor_settings' => $editorSettings,
-                'libs' => $config['libraries']
-            ));
+                $this->template->set(array(
+                    'bit' => $bit,
+                    'settings' => $bitSettings,
+                    'editor_settings' => $editorSettings,
+                    'libs' => $config['libraries']
+                ));
 
-            $this->template->render();
+                $this->template->render();
+            }
         }
     }
 

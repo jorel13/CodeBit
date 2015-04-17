@@ -63,6 +63,7 @@ class Controller
         global $config;
 
         header('Location: ' . $config['base_url'] . $loc);
+        exit;
     }
 
     public function api_put($status, $response = array(), $tipo = 'json')
