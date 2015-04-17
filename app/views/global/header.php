@@ -99,6 +99,7 @@
                     </li>
                 <?PHP } ?>
                 <li><a href="<?= home_url('auth/logout'); ?>">Logout</a></li>
+                <li><a href="<?= home_url('auth/profile'); ?>">Your Profile</a></li>
             </ul>
             <header>
                 <div><span class="bit-radio-unchecked"></span>
