@@ -27,7 +27,7 @@
     font-family: bits;
     speak: none;
     font-style: normal;
-    font-weight: normal;
+    font-weight: bolder;
     line-height: 1;
     -webkit-font-smoothing: antialiased;
 }
@@ -166,15 +166,11 @@ body, html {
 }
 
 body {
-
     margin: 0;
     padding: 0;
-
     font: 14px/1.5em "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #fff;
     cursor: default;
-
-    background: #202020;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -187,7 +183,7 @@ a, a:visited {
 .modal form input,
 .modal form textarea,
 .modal form select {
-   /* font-family: "Monaco", "Inconsolata", "Andale Mono", "Lucida Console", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;*/
+    /* font-family: "Monaco", "Inconsolata", "Andale Mono", "Lucida Console", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;*/
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
@@ -199,9 +195,7 @@ a, a:visited {
     top: 0;
     left: 0px;
     right: 0;
-
     height: 30px;
-
     color: /*#3D494E*/ #fff;
     background: /*#fefefe*/ #202020;
     outline: 2px solid rgba(0, 0, 0, 0.1);
@@ -211,7 +205,8 @@ a, a:visited {
 #top-bar header {
     line-height: 30px;
     text-align: center;
-    color:/* #777*/ #fff;
+    color: /* #777*/ #fff;
+    font-size: 1.5em;
 }
 
 #top-bar header div, #top-bar header p {
@@ -235,14 +230,16 @@ a, a:visited {
 
 #top-bar header .version {
     color: #999;
+    font-size: 1rem;
 }
 
 #top-bar span[class^="bit"] {
-    font-size: 9px;
+    font-size: 0.75em;
     position: relative;
     top: -1px;
     margin-right: 3px;
     line-height: 25px;
+    color: #00e9a4;
 }
 
 #top-bar li.share-item:hover {
@@ -260,9 +257,18 @@ a, a:visited {
     top: 2px;
 }
 
+#top-bar .brand span {
+    font-size: 1.5em;
+}
+
+#top-bar .brand{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
 #top-bar .brand span[class^="bit"] {
-    font-size: 16px;
-    top: 2px;
+    font-size: 1em;
+    top: 4px;
     margin-right: 0;
 }
 
@@ -339,14 +345,13 @@ a, a:visited {
     border-bottom: 1px solid #2f2f2f;
 }
 
-#top-bar .brand a {
-    font-family: "Monaco", "Inconsolata", "Andale Mono", "Lucida Console", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
-    border-right: 1px solid #000;
-    padding: 0 20px;
-}
 
 #top-bar a {
     cursor: default;
+}
+
+#top-bar li.brand:hover {
+    background: inherit;
 }
 
 #top-bar li:hover {
@@ -462,7 +467,6 @@ a, a:visited {
 .result-wrap {
     display: none;
     height: 50%;
-    background: #202020;
 }
 
 .result-wrap .iframe-wrap {
@@ -540,7 +544,6 @@ a, a:visited {
     background: -webkit-linear-gradient(left, #505050, #383838);
     background: linear-gradient(to right, #505050, #383838);
 
-
     position: absolute;
     z-index: 250;
     left: 0;
@@ -607,7 +610,7 @@ a, a:visited {
     border: none;
     text-align: left;
     text-decoration: underline;
-    color:#fff;
+    color: #fff;
 }
 
 #blanket .modal {
@@ -781,11 +784,11 @@ a, a:visited {
 }
 
 .bit-list p span {
-    color: #999;
+    color: #fff;
 }
 
 .bit-list time {
-    color: #999;
+    color: #00e9a4;
     font-size: 11px;
 }
 
@@ -795,20 +798,20 @@ a, a:visited {
     padding: 0 10px;
     font-size: 11px;
     overflow: hidden;
-    color: #434343;
+    color: #00e9a4;
 }
 
 .bit-list .odd {
-    background: #f9f9f9;
+    background: #4d4d4d;
 }
 
 .bit-list a:hover {
-    border-color: #7AC548;
-    background: #7AC548;
+    border-color: #00e9a4;
+    background: #00e9a4;
 }
 
 .bit-list a:hover * {
-    color: #fff;
+    color: #222;
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 }
 
@@ -838,10 +841,10 @@ a, a:visited {
     background: #00ffb4;
     color: #202020;
 }
+
 .login-label {
     padding-right: 10px;
 }
-
 
 /*
  * Helpers
@@ -945,11 +948,11 @@ a, a:visited {
     background: #fff;
 }
 
-
 /**social styles **/
 .main-content {
     padding: 0 3%;
 }
+
 .one-codelet {
     width: 384px;
     height: 181px;
@@ -958,11 +961,12 @@ a, a:visited {
     margin: 0 2% 25px 0;
 
 }
+
 .iframe-wrap {
     position: relative;
-    height: 150px;
     overflow: hidden;
 }
+
 .codelet-info {
     height: 30px;
     width: 100%;
@@ -973,28 +977,34 @@ a, a:visited {
     font-weight: bold;
 
 }
+
 .main-page-header {
     font-size: 20px;
 }
+
 .user-name {
     display: inline-block;
     width: 41%;
     padding: 7px 0 6px 14px;
     color: #00e9a4;
 }
+
 .codelet-stats {
     display: inline-block;
     width: 48%;
     text-align: right;
 }
+
 .hearts-num {
     display: inline-block;
 }
+
 .heart {
     width: 23px;
     height: 17px;
     display: inline-block;
 }
+
 .heart:before {
     content: "\2764";
     font-weight: bold;
@@ -1002,15 +1012,18 @@ a, a:visited {
     font-size: 17px;
     vertical-align: bottom;
 }
+
 .more-codebits {
     width: 20px;
     height: 15px;
-    margin:  0 auto;
+    margin: 0 auto;
 }
+
 .codebits-container {
     margin: 0 auto;
     width: 98%;
 }
+
 .next-btn {
     position: relative;
     width: 116px;
@@ -1044,15 +1057,14 @@ a, a:visited {
 */
 
 .toggle-container {
-    top: 15px;
     height: 0;
-    width:90px;
+    width: 90px;
 }
 
 .flat-toggle {
-    width: 32px;
-    border-radius: 4px;
-    height: 10px;
+    width: 30px;
+    border-radius: 15px;
+    height: 13px;
     background-color: #DDD;
     position: relative;
     -moz-user-select: none;
@@ -1060,6 +1072,8 @@ a, a:visited {
     -webkit-user-select: none;
     -o-user-select: none;
     user-select: none;
+    top: 17px;
+    margin-left: 3px;
 }
 
 .flat-toggle:after {
@@ -1067,9 +1081,9 @@ a, a:visited {
     background-color: #ADADAD;
     position: absolute;
     left: 0;
-    top: -3px;
-    width: 15px;
-    height: 15px;
+    top: 0;
+    width: 13px;
+    height: 13px;
     content: '';
     -webkit-transform: translate(0);
     -ms-transform: translate(0);
@@ -1080,9 +1094,9 @@ a, a:visited {
 }
 
 .flat-toggle > span {
-    margin-left: 45px;
+    margin-left: 38px;
     position: relative;
-    top: -26px;
+    top: -25px;
     color: #FFF;
     white-space: nowrap;
     display: block;
@@ -1090,22 +1104,26 @@ a, a:visited {
 }
 
 .flat-toggle.on {
-    background-color: #8CE2FF;
+    background-color: #00ba83;
     transform: translate3d(0, 0, 0);
 }
 
 .flat-toggle.on:after {
-    background-color: #00A3D9;
+    background-color: #00e9a4;
     -webkit-transform: translate(17px);
     -ms-transform: translate(17px);
     transform: translateX(17px);
 }
 
 .flat-toggle.on > span {
-    color: #00A3D9;
+    color: #00e9a4;
 }
 
 .nav-spacing {
     position: relative;
-    top: -25px;
+    top: -29px;
+}
+
+.login-background{
+    background:#202020;
 }

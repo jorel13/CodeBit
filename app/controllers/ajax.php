@@ -2,8 +2,6 @@
 
 class Ajax extends Controller
 {
-    private $data;
-
     function __construct()
     {
         parent::__construct();
@@ -22,32 +20,28 @@ class Ajax extends Controller
     function saveBit()
     {
         $data = $this->post();
+        if (isset($data)) {
 
-        $code = $this->loadModel('code_model');
+            $code = $this->loadModel('code_model');
+            $tiny = $this->loadHelper('tiny');
 
-        $tiny = $this->loadHelper('tiny');
+            $data->preferences['html_bodyTag'] = stripslashes($data->preferences['html_bodyTag']);
+            $data->payload['meta'] = json_encode($data->preferences);
 
-        $data->preferences['html_bodyTag'] = stripslashes($data->preferences['html_bodyTag']);
+            if ($data->bit) {
+                $res = $code->updateBit($data->bit, $data->payload);
 
-        $data->payload['meta'] = json_encode($data->preferences);
+                if ($res['updated']) {
+                    $this->api_put(true, array('slug' => $data->bit['slug'] . '/' . $res['version']));
+                }
+            } else {
+                $res = $code->insertBit($data->payload, $tiny);
 
-        if ($data->bit) {
-
-            $res = $code->updateBit($data->bit, $data->payload);
-
-            if ($res['updated']) {
-                $this->api_put(true, array('slug' => $data->bit['slug'] . '/' . $res['version']));
-            }
-
-        } else {
-
-            $res = $code->insertBit($data->payload, $tiny);
-
-            if ($res['inserted']) {
-                $this->api_put(true, array('slug' => $res['slug']));
+                if ($res['inserted']) {
+                    $this->api_put(true, array('slug' => $res['slug']));
+                }
             }
         }
-
     }
 
 
@@ -155,13 +149,13 @@ class Ajax extends Controller
     public function post($key = false)
     {
         if (isset($_POST) && !empty($_POST)) {
-            $this->data = $_POST;
+            return (object) $_POST;
         }
 
-        if (isset($_GET) && !empty($_GET) && !empty($_GET[0])) {
-            $this->data = $_GET;
+        if (isset($_GET) && !empty($_GET)) {
+            return (object) $_GET;
         }
 
-        return $this->data;
+        return false;
     }
 }

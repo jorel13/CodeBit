@@ -14,11 +14,33 @@ window.btoa = function(str) {
 //Toggle 
  $('.flat-toggle').on('click', function() {$(this).toggleClass('on');});
 
+//Fake Tabs for profile
+// show first content by default
+$('#tabs-nav li:first-child').addClass('active');
+$('.content').hide();
+$('.content:first').show();
+
+// click function
+$('#tabs-nav li').click(function(){
+    $('#tabs-nav li').removeClass('active');
+    $(this).addClass('active');
+    $('.content').hide();
+
+    var activeTab = $(this).find('a').attr('href');
+    $(activeTab).fadeIn();
+    return false;
+
+});
+
+
+
 
 /*
  *
  *
  */
+
+
 
 function addCSSExternal()
 {
@@ -266,7 +288,7 @@ var Bits = Bits || (function($, win, doc) {
 	        	action: {
 	        	
 	        		/*
-	        		 * new is a reserved keywork, string that bitch.
+	        		 * new is a reserved keyword, make it a string.
 	        		 * This merely redirects to the New Bit URL, after
 	        		 * checking save state of course
 	        		 */
@@ -293,7 +315,7 @@ var Bits = Bits || (function($, win, doc) {
 			        	var code = {
 					        	html: win.btoa( Utils.cache.editors.html.getValue() ),
 					        	css: win.btoa( Utils.cache.editors.css.getValue() ),
-					        	javascript: win.btoa( Utils.cache.editors.javascript.getValue() ),
+					        	javascript: win.btoa( Utils.cache.editors.javascript.getValue() )
 				        	},
 				        	bit = App.logic.code.states.current.bit,
 				        	meta = $('.bit-prefs').serializeObject();
@@ -414,7 +436,7 @@ var Bits = Bits || (function($, win, doc) {
 			        	},
 		        	},
 		        	
-		        	// Preferences related schwag
+		        	// Preferences related functions
 		        	preferences: {
 		        		
 		        		editor: {

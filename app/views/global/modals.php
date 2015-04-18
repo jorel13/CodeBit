@@ -122,7 +122,7 @@
                     External JS 
                     <input type="text" name="javascript_external" id="prefJSExternal">
                 </label>
-                <button type="button" id="more_fields" onclick=add_fields();>+ add another resource</button>
+                <button type="button" id="more_fields" onclick="add_fields();">+ add another resource</button>
             </form>
         </section>
         <footer class="modal-inner group">
@@ -155,7 +155,7 @@
                     External CSS
                     <input type="text" name="css_external" id="prefCSSExternal">
                 </label>
-                <button type="button" id="more_fields" onclick=addCSSExternal()>+ add another resource</button>
+                <button type="button" id="more_fields" onclick="addCSSExternal();">+ add another resource</button>
             </form>
         </section>
         <footer class="modal-inner group">

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8"/>
 
-    <title><?PHP echo $settings->bit_title.' | '; ?>Bits</title>
+    <title><?PHP echo $settings->bit_title . ' | '; ?>Bits</title>
 
     <meta name="app-route" content="<?PHP echo get_controller() . '/' . get_action(); ?>">
     <meta name="app-url" content="<?PHP echo home_url(); ?>">
@@ -30,9 +30,10 @@
 <div class="data-wrap">
     <div id="top-bar">
         <nav>
-            <ul class = "nav-spacing">
+            <ul class="nav-spacing">
                 <li class="brand">
-                    <a href="<?PHP echo home_url(); ?>"><span class="bit-embed"></span> new codebit</a>
+                    <!--a href="<?PHP //echo home_url(); ?>"><span class="bit-embed"></span> new codebit</a-->
+                    <span>eaglec<span class="bit-embed"></span>de</span>
                 </li>
                 <li>
                     <a href="#">File</a>
@@ -73,7 +74,7 @@
                 <li>
                     <a href="#">Preferences</a>
                     <ul>
-                        <li class="seperator"><a href="#" data-event="code.action.preferences.bit.get">Bit
+                        <li class="seperator"><a href="#" data-event="code.action.preferences.bit.get">Codebit
                                 Preferences</a></li>
                         <li><a href="#" data-event="code.action.preferences.html.get" data-pref="html">HTML
                                 Preferences</a></li>
@@ -86,25 +87,25 @@
                         <li><a href="#" data-event="code.shortcuts">Keyboard Shortcuts</a></li>
                     </ul>
                 </li>
-                    <li>
-                        <a href="#">Share</a>
-                        <ul>
-                            <li><a href="<?= home_url('code/share/' . $bit->slug . '/' . $bit->version); ?>"
-                                   target="_blank">Result + Bits Bar</a></li>
-                            <li><a href="<?= home_url('code/show/' . $bit->slug . '/' . $bit->version); ?>"
-                                   target="_blank">Result Only</a></li>
-                        </ul>
-                    </li>
-                <li class = "toggle-container"> 
-                        <div class="flat-toggle"> 
-                            <span>Private</span> 
-                        </div> 
-                </li> 
+                <li>
+                    <a href="#">Share</a>
+                    <ul>
+                        <li><a href="<?= home_url('code/share/' . $bit->slug . '/' . $bit->version); ?>"
+                               target="_blank">Result + Bits Bar</a></li>
+                        <li><a href="<?= home_url('code/show/' . $bit->slug . '/' . $bit->version); ?>"
+                               target="_blank">Result Only</a></li>
+                    </ul>
+                </li>
+                <li class="toggle-container"> 
+                    <div class="flat-toggle"> 
+                        <span>Private</span> 
+                    </div>
+                     
+                </li>
+                <li><a href="<?= home_url('auth/profile'); ?>">Your Profile</a></li>
                 <li>
                     <a href="<?= home_url('auth/logout'); ?>">Logout</a>
-                </li> 
-
-
+                </li>
             </ul>
             <header>
                 <div><span class="bit-radio-unchecked"></span>
